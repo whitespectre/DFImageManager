@@ -38,7 +38,7 @@
     CGContextDrawImage(contextRef, (CGRect){CGPointZero, imageSize}, imageRef);
     CGImageRef decompressedImageRef = CGBitmapContextCreateImage(contextRef);
     CGContextRelease(contextRef);
-    UIImage *decompressedImage = [UIImage imageWithCGImage:decompressedImageRef scale:image.scale orientation:image.imageOrientation];
+    UIImage *decompressedImage = [UIImage imageWithCGImage:decompressedImageRef scale:1 orientation:image.imageOrientation];
     if (decompressedImageRef) {
         CGImageRelease(decompressedImageRef);
     }
@@ -52,7 +52,7 @@
                                       (CGFloat)floor(cropRect.size.width * imageSize.width),
                                       (CGFloat)floor(cropRect.size.height * imageSize.height));
     CGImageRef croppedImageRef = CGImageCreateWithImageInRect([image CGImage], imageCropRect);
-    UIImage *croppedImage = [UIImage imageWithCGImage:croppedImageRef scale:image.scale orientation:image.imageOrientation];
+    UIImage *croppedImage = [UIImage imageWithCGImage:croppedImageRef scale:1 orientation:image.imageOrientation];
     if (croppedImageRef) {
         CGImageRelease(croppedImageRef);
     }
