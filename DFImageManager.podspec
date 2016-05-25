@@ -6,14 +6,19 @@ Pod::Spec.new do |s|
                     Advanced framework for loading, caching, processing, displaying and preheating images. DFImageManager is a pipeline that loads images using multiple dependencies which can be injected in runtime. It features optional AFNetworking, FLAnimatedImage and WebP integration.
                     DESC
     s.license      = { :type => 'MIT', :file => 'LICENSE' }
-    s.homepage     = 'https://github.com/kean/DFImageManager'
+    s.homepage     = 'https://github.com/whitespectre/DFImageManager.git'
     s.author             = 'Alexander Grebenyuk'
     s.social_media_url   = 'https://twitter.com/a_grebenyuk'
     s.ios.deployment_target = '8.0'
     s.watchos.deployment_target = '2.0'
-    s.source       = { :git => 'https://github.com/kean/DFImageManager.git', :tag => s.version.to_s }
+    s.source       = { :git => 'https://github.com/whitespectre/DFImageManager.git', :commit => 'e7339aed044930ee3ae08d44bab70c45f72b2ce8' }
     s.requires_arc = true
     s.default_subspecs = 'Core', 'UI'
+    s.ios.deployment_target = '8.0'
+    s.prefix_header_contents = '#define DF_SUBSPEC_AFNETWORKING_ENABLED 1'
+    s.dependency 'DFImageManager/Core'
+    s.dependency 'AFNetworking/NSURLSession', '~> 3.0'
+    s.source_files = 'Pod/Source/AFNetworking/**/*.{h,m}'
 
     s.subspec 'Core' do |ss|
         ss.source_files  = 'Pod/Source/Core/**/*.{h,m}'
@@ -24,14 +29,6 @@ Pod::Spec.new do |s|
         ss.ios.deployment_target = '8.0'
         ss.dependency 'DFImageManager/Core'
         ss.ios.source_files = 'Pod/Source/UI/**/*.{h,m}'
-    end
-
-    s.subspec 'AFNetworking' do |ss|
-        ss.ios.deployment_target = '8.0'
-        ss.prefix_header_contents = '#define DF_SUBSPEC_AFNETWORKING_ENABLED 1'
-        ss.dependency 'DFImageManager/Core'
-        ss.dependency 'AFNetworking/NSURLSession', '~> 3.0'
-        ss.source_files = 'Pod/Source/AFNetworking/**/*.{h,m}'
     end
 
     s.subspec 'PhotosKit' do |ss|
