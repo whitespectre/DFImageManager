@@ -4,6 +4,7 @@
 
 #import "DFImageManaging.h"
 #import <Foundation/Foundation.h>
+#import "DFImageManagerLoader.h"
 
 @class DFImageManagerConfiguration;
 
@@ -22,6 +23,10 @@
 /*! Creates image manager with a given configuration. Manager copies the configuration object.
  */
 - (nonnull instancetype)initWithConfiguration:(nonnull DFImageManagerConfiguration *)configuration NS_DESIGNATED_INITIALIZER;
+
+/*! the image loader reference.
+ */
+@property (nonnull, nonatomic, readonly) DFImageManagerLoader *imageLoader;
 
 /*! Unavailable initializer, please use designated initializer.
  */

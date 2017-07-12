@@ -102,7 +102,6 @@ static inline void DFDispatchAsync(dispatch_block_t block) {
 
 @interface DFImageManager () <_DFImageTaskManaging, DFImageManagerLoaderDelegate>
 
-@property (nonnull, nonatomic, readonly) DFImageManagerLoader *imageLoader;
 @property (nonnull, nonatomic, readonly) NSMutableSet /* _DFImageTask */ *executingTasks;
 @property (nonnull, nonatomic, readonly) NSMutableDictionary /* _DFImageCacheKey : _DFImageTask */ *preheatingTasks;
 @property (nonnull, nonatomic, readonly) NSRecursiveLock *recursiveLock;

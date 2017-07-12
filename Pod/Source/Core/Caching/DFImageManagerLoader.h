@@ -8,6 +8,7 @@
 @class DFImageTask;
 @class DFImageManagerConfiguration;
 @class DFImageManagerLoader;
+@class DFCachedImageResponse;
 
 @protocol DFImageManagerLoaderDelegate <NSObject>
 
