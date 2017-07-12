@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
     s.social_media_url   = 'https://twitter.com/a_grebenyuk'
     s.ios.deployment_target = '8.0'
     s.watchos.deployment_target = '2.0'
-    s.source       = { :git => 'https://github.com/whitespectre/DFImageManager.git', :commit => 'e7339aed044930ee3ae08d44bab70c45f72b2ce8' }
+    s.source       = { :git => 'https://github.com/whitespectre/DFImageManager.git', :commit => '1346051161ca486971404ff37e877251eb6e9d05' }
     s.requires_arc = true
     s.default_subspecs = 'Core', 'UI'
     s.prefix_header_contents = '#define DF_SUBSPEC_AFNETWORKING_ENABLED 1'
