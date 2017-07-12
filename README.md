@@ -7,9 +7,9 @@
 
 Advanced framework for loading, caching, processing, displaying and preheating images.
 
-## DEPRECATED
+**This framework is no longer (well) supported.**
 
-This project is deprecated in favor of [Nuke](https://github.com/kean/Nuke) which fixes a lot of design decisions made in DFImageManager.
+**Programming in Swift? Check out [Nuke](https://github.com/kean/Nuke)!**
 
 ## <a name="h_features"></a>Features
 
